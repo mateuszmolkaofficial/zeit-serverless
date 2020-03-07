@@ -1,15 +1,12 @@
 import { NowRequest, NowResponse } from '@now/node';
 import pg from '../../db/pg';
 
-const getUsers = async (
-  req: NowRequest,
-  res: NowResponse,
-): Promise<NowResponse> => {
+const getUsers = async (req: NowRequest, res: NowResponse) => {
   try {
-    const test = await pg('users');
-    return res.status(200).send(test);
+    const users = await pg('users');
+    res.status(200).send(users);
   } catch (e) {
-    console.log(e);
+    res.status(500).send(e);
   }
 };
 

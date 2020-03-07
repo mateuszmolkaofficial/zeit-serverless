@@ -2,10 +2,7 @@ import { NowRequest, NowResponse } from '@now/node';
 import getUsers from '../api-functions/users/get';
 import postUser from '../api-functions/users/post';
 
-export default async (
-  req: NowRequest,
-  res: NowResponse,
-): Promise<NowResponse> => {
+export default async (req: NowRequest, res: NowResponse) => {
   switch (req.method.toUpperCase()) {
     case 'GET':
       return getUsers(req, res);
