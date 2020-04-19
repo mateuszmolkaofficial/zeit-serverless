@@ -1,5 +1,0 @@
-{
-  "env": {
-    "DATABASE_URL": "@zeit-serverless-database-url"
-  }
-}
